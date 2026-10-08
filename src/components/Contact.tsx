@@ -167,7 +167,7 @@ export default function Contact() {
                 ['  "location"', `"${config.location}"`],
                 ['  "available"', "true"],
                 ['  "response_time"', '"< 24 hours"'],
-                ['  "open_to"', '["full-time", "contract", "graduate"]'],
+                ['  "open_to"', '["full-time", "permanent"]'],
                 ['  "timezone"', '"Europe/Dublin (GMT+1)"'],
                 ['  "languages"', '["SQL", "Python"]'],
                 ['}', null],
