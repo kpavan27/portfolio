@@ -79,8 +79,8 @@ function DataChart() {
         {/* Stats row */}
         <div className="grid grid-cols-3 gap-3 mt-5 pt-4" style={{ borderTop: "1px solid var(--border-dim)" }}>
           {[
-            { val: "3+", label: "Internships", c: "var(--blue)" },
-            { val: "3", label: "Projects", c: "var(--amber)" },
+            { val: "AWS", label: "Data Eng. Cert", c: "var(--blue)" },
+            { val: "6", label: "Projects", c: "var(--amber)" },
             { val: "MSc", label: "1st Class", c: "var(--green)" },
           ].map((s) => (
             <div key={s.label} className="text-center">
@@ -101,7 +101,7 @@ function DataChart() {
       {(
         [
           { text: "✓ Pipeline built", color: "var(--green)", top: "-12px", right: "-16px", delay: 1.4 },
-          { text: "↗ +24% accuracy", color: "var(--amber)", top: "55%", left: "-140px", delay: 1.7 },
+          { text: "✓ AWS certified", color: "var(--amber)", top: "55%", left: "-140px", delay: 1.7 },
         ] as { text: string; color: string; top?: string; bottom?: string; left?: string; right?: string; delay: number }[]
       ).map((chip, i) => (
         <motion.div
