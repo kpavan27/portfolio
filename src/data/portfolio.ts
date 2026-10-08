@@ -1,8 +1,8 @@
 export const config = {
   name: "Pavan Kolasani",
-  role: "Junior Data Analyst",
-  tagline: "Turning raw data into decisions that move businesses forward.",
-  bio: "MSc Data Science graduate (First Class Honours, TU Dublin) with hands-on experience in SQL, Python, and Power BI. I build clean data pipelines, uncover patterns in messy datasets, and translate findings into dashboards stakeholders actually use.",
+  role: "Data Engineer · Data Scientist",
+  tagline: "Building data pipelines and models people can trust — from healthcare data migration to ML evaluation.",
+  bio: "EHR Data Migration Specialist at UPMC Ireland, working on SQL-based data migration, ETL and data-quality validation for a MEDITECH Expanse rollout across UPMC's Irish hospitals. MSc Data Science (First Class Honours, TU Dublin) and AWS Certified Data Engineer – Associate. My projects focus on what makes data work trustworthy: leakage checks, honest evaluation, drift monitoring and clear write-ups.",
   email: "kolasanipavan27@gmail.com",
   phone: "+353 894091865",
   location: "Dublin, Ireland",
@@ -40,6 +40,7 @@ export const skillCategories = [
       { name: "Data Validation", level: 87 },
       { name: "Feature Engineering", level: 76 },
       { name: "Schema Modelling", level: 78 },
+      { name: "Testing & CI (pytest, GitHub Actions)", level: 70 },
     ],
   },
   {
@@ -49,7 +50,7 @@ export const skillCategories = [
       { name: "Git / GitHub", level: 88 },
       { name: "Azure", level: 65 },
       { name: "Databricks", level: 60 },
-      { name: "AWS S3 / IAM", level: 55 },
+      { name: "AWS (Certified Data Engineer)", level: 75 },
     ],
   },
 ];
@@ -93,10 +94,14 @@ export const projects = [
     category: "MSc Dissertation",
     categoryColor: "#8b5cf6",
     description:
-      "MSc First Class dissertation at TU Dublin. Built a Visual Knowledge Base (VKB) framework for interpretable zero-shot scene classification — YOLOv8-Large detects objects per image, TF-IDF weighting identifies diagnostically unique objects per scene, and an L1-normalised intersection score classifies unseen images without any direct scene training. Evaluated on 4,400 Places365 images across 8 scene categories.",
+      "MSc dissertation at TU Dublin (First Class Honours). Built a Visual Knowledge Base (VKB) framework for interpretable zero-shot scene classification: YOLOv8-Large detects objects, TF-IDF weighting finds the objects that are diagnostic of each scene, and an L1-normalised intersection score classifies unseen images without training a scene classifier. An abstain rule returns \"unknown\" instead of guessing, and every prediction is logged with the objects that justified it. Evaluated on 4,400 Places365 images across 8 scenes, with ablations.",
     tech: ["Python", "YOLOv8", "TF-IDF", "scikit-learn", "Google Colab"],
-    metrics: ["68.5% Top-1 accuracy", "4,400 image dataset", "8 scene categories"],
-    github: "https://github.com/kpavan27/Projects/tree/main/Zero-Shot%20VKB",
+    metrics: [
+      "77% accuracy on non-abstained predictions",
+      "80.25% Top-2 · 68.5% strict Top-1",
+      "Ablation: uniform weights drop Top-1 to 50%",
+    ],
+    github: "https://github.com/kpavan27/zero-shot-scene-classification",
     featured: true,
   },
   {
@@ -105,39 +110,53 @@ export const projects = [
     category: "ML + Engineering",
     categoryColor: "#f59e0b",
     description:
-      "LSTM-based time-series forecasting system trained on UCI household power consumption data. Full preprocessing pipeline (download → clean → scale → sequence), LSTM model predicting next-hour demand from the previous 24 hours, FastAPI REST API serving real-time predictions, and a React/TypeScript dashboard visualising actual vs predicted demand with interactive charts.",
+      "LSTM time-series forecasting on UCI household power consumption data. Preprocessing pipeline (download → clean → scale → sequence), an LSTM predicting next-hour demand from the previous 24 hours, a FastAPI service serving predictions, and a React/TypeScript dashboard comparing actual and predicted demand.",
     tech: ["Python", "TensorFlow", "FastAPI", "React", "TypeScript", "Vite"],
-    metrics: ["LSTM time-series model", "FastAPI prediction API", "React live dashboard"],
-    github: "https://github.com/kpavan27/Projects/tree/main/Energy_Demand_Forecasting",
+    metrics: ["Next-hour forecast from a 24-hour window", "FastAPI prediction API", "React live dashboard"],
+    github: "https://github.com/kpavan27/energy-demand-forecasting",
     featured: true,
   },
   {
     id: "05",
-    name: "Predictive Maintenance — Manufacturing",
-    category: "ML + BI",
-    categoryColor: "#10b981",
-    description:
-      "End-to-end ML pipeline on 18,250 synthetic IoT sensor records. Engineered 53 features (rolling statistics, lag features, failure ratios), applied SMOTE for class imbalance, tuned hyperparameters with Optuna, and trained an XGBoost + Random Forest + Logistic Regression ensemble — achieving 95% accuracy. Power BI dashboard surfaces real-time KPIs, failure trend analysis, and AI-recommended maintenance schedules.",
-    tech: ["Python", "XGBoost", "scikit-learn", "Optuna", "SMOTE", "Power BI"],
-    metrics: ["95% model accuracy", "18,250 sensor records", "Power BI KPI dashboard"],
-    github: "https://github.com/kpavan27/Projects/tree/main/Predictive_Maintenance_Manufacturing",
-    featured: true,
-  },
-  {
-    id: "06",
     name: "Voice-to-Recipe Generator",
     category: "AI Application",
     categoryColor: "#3b82f6",
     description:
-      "Full-stack AI application that converts voice notes about fridge ingredients into sustainable recipes — OpenAI Whisper speech-to-text, fuzzy ingredient extraction from 150+ variations, automatic carbon footprint scoring across 70+ ingredients, and per-ingredient nutritional breakdown. FastAPI backend structured into processing modules with a full test suite; React/TypeScript + Tailwind frontend with 8 purpose-built components.",
-    tech: ["Python", "FastAPI", "OpenAI Whisper", "React", "TypeScript", "Tailwind CSS"],
+      "Full-stack app that turns a spoken list of ingredients into recipe suggestions: Whisper speech-to-text (faster-whisper), fuzzy ingredient extraction over 150+ ingredient variations, carbon-footprint scoring for 70+ ingredients and a per-ingredient nutrition breakdown. FastAPI backend split into processing modules with a pytest suite; React/TypeScript + Tailwind frontend.",
+    tech: ["Python", "FastAPI", "Whisper", "React", "TypeScript", "Tailwind CSS"],
     metrics: ["150+ ingredient variations", "Carbon footprint scoring", "Nutrition + sustainability analysis"],
-    github: "https://github.com/kpavan27/Projects/tree/main/voice-to-recipe",
+    github: "https://github.com/kpavan27/voice-to-recipe",
     featured: true,
+  },
+  {
+    id: "06",
+    name: "Predictive Maintenance — Manufacturing",
+    category: "Data Engineering + BI",
+    categoryColor: "#10b981",
+    description:
+      "Simulated sensor data for 50 machines over a year (18,250 machine-days, ~6.7% failure days), with feature engineering (rolling statistics, lag features, ratios, imputation) and Power BI KPI dashboard configuration. Model training code and a full evaluation are being added.",
+    tech: ["Python", "pandas", "scikit-learn", "Power BI"],
+    metrics: ["18,250 simulated machine-days", "Rolling and lag sensor features", "Power BI KPI dashboard"],
+    github: "https://github.com/kpavan27/predictive-maintenance",
+    featured: false,
   },
 ];
 
 export const experience = [
+  {
+    company: "UPMC Ireland",
+    role: "EHR Data Migration Specialist",
+    period: "Aug 2026 – Present",
+    location: "Dublin, Ireland",
+    color: "#06b6d4",
+    bullets: [
+      "Supporting the MEDITECH Expanse EHR implementation across UPMC's Irish hospital network, moving patient data off legacy systems.",
+      "Writing and reviewing SQL-based migration and ETL logic: tracing patient records across source schemas, mapping to target, and running agreed migration processes under the programme's clean → map → test → validate → sign-off process.",
+      "Validating data quality with profiling, duplicate and NULL checks, and source-to-target count reconciliation.",
+      "Collaborating cross-functionally on migration work, with patient safety at the centre of every decision.",
+    ],
+    tech: ["SQL", "Python", "ETL", "Data Validation", "MEDITECH Expanse"],
+  },
   {
     company: "Innovorex",
     role: "Junior AI/Data Engineer Intern",
@@ -187,7 +206,7 @@ export const education = [
     period: "2024 – 2025",
     location: "Dublin, Ireland",
     color: "#3b82f6",
-    note: "Dissertation: Zero-Shot Scene Classification Platform — end-to-end ETL pipelines, data validation framework, and model performance dashboards.",
+    note: "Dissertation: A Visual Knowledge Base Framework for Interpretable Zero-Shot Scene Classification (YOLOv8, TF-IDF, Places365).",
   },
   {
     institution: "ICFAI Tech University",
@@ -201,6 +220,7 @@ export const education = [
 ];
 
 export const certifications = [
+  { name: "AWS Certified Data Engineer – Associate (DEA-C01)", issuer: "Amazon Web Services", year: "2026", color: "#f59e0b" },
   { name: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services", year: "2025", color: "#f59e0b" },
   { name: "Generative AI & LLM Development", issuer: "DeepLearning.AI", year: "2024", color: "#8b5cf6" },
 ];
