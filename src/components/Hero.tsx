@@ -243,7 +243,7 @@ export default function Hero() {
           >
             {config.role}
             <span className="font-mono text-sm ml-2" style={{ color: "var(--muted)" }}>
-              — SQL · Python · Power BI · Azure
+              — SQL · Python · ETL · AWS
             </span>
           </motion.p>
 
