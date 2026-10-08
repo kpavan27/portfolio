@@ -64,9 +64,9 @@ export default function Contact() {
               <span style={{ color: "var(--blue)" }}>insights</span>.
             </h2>
             <p className="leading-relaxed mb-8" style={{ color: "var(--text-dim)" }}>
-              I&apos;m actively looking for Junior Data Analyst roles — full-time, contract, or
-              graduate positions. Whether you need someone to clean messy datasets, build pipelines,
-              or deliver stakeholder dashboards, I&apos;d love to chat.
+              I&apos;m open to data engineering, analytics and data science roles — especially in
+              healthcare and health-tech. Whether you need reliable pipelines, careful data
+              validation or models that hold up in production, I&apos;d love to chat.
             </p>
 
             {/* Contact items */}
