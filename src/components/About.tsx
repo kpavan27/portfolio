@@ -28,8 +28,8 @@ function CountUp({ target, suffix = "", delay = 0 }: { target: number; suffix?: 
 }
 
 const stats = [
-  { label: "Internships", value: 3, suffix: "+", color: "var(--blue)", icon: "💼" },
-  { label: "Projects", value: 3, suffix: "", color: "var(--amber)", icon: "📊" },
+  { label: "Internships", value: 3, suffix: "", color: "var(--blue)", icon: "💼" },
+  { label: "Projects", value: 6, suffix: "", color: "var(--amber)", icon: "📊" },
   { label: "MSc GPA", value: 1, suffix: "st Class", color: "var(--green)", icon: "🎓" },
   { label: "B.Tech CGPA", value: 8.3, suffix: "/10", color: "var(--purple)", icon: "⚡" },
 ];
@@ -61,9 +61,9 @@ export default function About() {
               {config.bio}
             </p>
             <p style={{ color: "var(--text-dim)", lineHeight: "1.8" }}>
-              My work spans the full analytics lifecycle — from ingesting and validating raw data, to building
-              ETL pipelines, to producing dashboards that non-technical stakeholders can actually act on.
-              I'm equally comfortable writing SQL queries, scripting Python workflows, or building a Power BI report from scratch.
+              My work spans the full data lifecycle — profiling and validating source data, building and
+              reconciling ETL pipelines, and evaluating models properly: leakage checks, confidence intervals,
+              drift and error analysis. I&apos;m equally comfortable in SQL, Python or a Power BI report.
             </p>
 
             {/* Quick facts */}
@@ -74,9 +74,10 @@ export default function About() {
               {[
                 ["location", config.location],
                 ["education", "MSc Data Science · TU Dublin (2025)"],
-                ["focus", "Data pipelines · BI dashboards · EDA"],
-                ["tools", "SQL · Python · Power BI · Azure · Databricks"],
-                ["status", "✓ Available for roles"],
+                ["role", "EHR Data Migration Specialist · UPMC Ireland"],
+                ["focus", "Data migration · ETL · ML evaluation"],
+                ["tools", "SQL · Python · AWS · DuckDB · FastAPI · Power BI"],
+                ["status", "✓ Open to new opportunities"],
               ].map(([k, v]) => (
                 <div key={k} className="flex gap-3">
                   <span style={{ color: "var(--blue)", minWidth: "80px" }}>{k}:</span>
