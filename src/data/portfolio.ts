@@ -57,6 +57,38 @@ export const skillCategories = [
 export const projects = [
   {
     id: "01",
+    name: "GenAI Policy Risk Analysis",
+    category: "Trust & Safety Analytics",
+    categoryColor: "#ef4444",
+    description:
+      "Mapped the 20 clauses of Google's Generative AI Prohibited Use Policy onto an off-the-shelf moderation signal and measured the gaps on 5,082 real user prompts (ToxicChat). Restricted label-based analysis to human-annotated prompts after finding the rest were pre-filtered by the same moderation API — grading it on them would be circular. Sized each uncovered clause, quantified the review-load cost of lowering the flag threshold, and wrote a decision memo with three ranked risks and recommendations.",
+    tech: ["Python", "pandas", "scikit-learn", "Statistics", "Policy Analysis", "pytest"],
+    metrics: [
+      "12 of 20 policy clauses had no moderation signal",
+      "Moderation caught 15% of human-labelled toxic prompts and 14% of jailbreaks",
+      "Jailbreak lexicon + moderation lifted recall to 47%",
+    ],
+    github: "https://github.com/kpavan27/genai-policy-risk-analysis",
+    featured: true,
+  },
+  {
+    id: "02",
+    name: "Email Abuse Detection",
+    category: "ML + Evaluation",
+    categoryColor: "#06b6d4",
+    description:
+      "Spam/abuse classifier on 33,716 Enron-Spam emails, built around the parts that decide whether a detector can be trusted: de-duplication and template-grouped splits to stop campaign leakage, removal of mailbox-identity shortcuts found through feature introspection, a threshold chosen from a false-positive budget, bootstrap CIs and McNemar tests, a temporal drift check (PSI), and error analysis that turned misses into named failure modes. SQL analysis in DuckDB; served via FastAPI.",
+    tech: ["Python", "scikit-learn", "DuckDB SQL", "FastAPI", "Docker", "GitHub Actions"],
+    metrics: [
+      "97.6% recall at 0.41% false-positive rate",
+      "Significant gain over baseline (McNemar p = 0.004)",
+      "Drift: recall 97.2% → 91.7% on newer spam (PSI 0.38)",
+    ],
+    github: "https://github.com/kpavan27/email-abuse-detection",
+    featured: true,
+  },
+  {
+    id: "03",
     name: "Zero-Shot Scene Classification (VKB)",
     category: "MSc Dissertation",
     categoryColor: "#8b5cf6",
@@ -68,7 +100,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "02",
+    id: "04",
     name: "Energy Demand Forecasting",
     category: "ML + Engineering",
     categoryColor: "#f59e0b",
@@ -80,7 +112,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "03",
+    id: "05",
     name: "Predictive Maintenance — Manufacturing",
     category: "ML + BI",
     categoryColor: "#10b981",
@@ -92,7 +124,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "04",
+    id: "06",
     name: "Voice-to-Recipe Generator",
     category: "AI Application",
     categoryColor: "#3b82f6",
