@@ -6,14 +6,14 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  title: "Pavan Kolasani — Junior Data Analyst",
+  title: "Pavan Kolasani — Data Engineer · Data Scientist",
   description:
-    "Junior Data Analyst skilled in SQL, Python, Power BI, and Azure. MSc Data Science (First Class Honours), TU Dublin. Open to opportunities in Dublin and remote.",
-  keywords: ["Data Analyst", "SQL", "Python", "Power BI", "Azure", "ETL", "Dashboard", "Dublin"],
+    "EHR Data Migration Specialist at UPMC Ireland. SQL, Python, ETL and ML evaluation. MSc Data Science (First Class Honours), TU Dublin. AWS Certified Data Engineer – Associate. Based in Dublin.",
+  keywords: ["Data Engineer", "Data Scientist", "SQL", "Python", "ETL", "AWS", "Machine Learning", "Healthcare Data", "Dublin"],
   authors: [{ name: "Pavan Kolasani", url: "mailto:kolasanipavan27@gmail.com" }],
   openGraph: {
-    title: "Pavan Kolasani — Junior Data Analyst",
-    description: "SQL · Python · Power BI · Azure · Open to work in Dublin",
+    title: "Pavan Kolasani — Data Engineer · Data Scientist",
+    description: "SQL · Python · ETL · AWS · ML evaluation · Dublin",
     type: "website",
   },
 };
