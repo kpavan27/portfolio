@@ -37,6 +37,7 @@ export const skillCategories = [
     color: "#10b981",
     skills: [
       { name: "ETL / ELT Pipelines", level: 82 },
+      { name: "dbt / DuckDB", level: 75 },
       { name: "Data Validation", level: 87 },
       { name: "Feature Engineering", level: 76 },
       { name: "Schema Modelling", level: 78 },
@@ -58,6 +59,22 @@ export const skillCategories = [
 export const projects = [
   {
     id: "01",
+    name: "Energy Data Pipeline",
+    category: "Data Engineering",
+    categoryColor: "#14b8a6",
+    description:
+      "Versioned pipeline that ingests three pinned releases of Our World in Data's energy dataset (each verified by git commit and SHA-256), lands them as bronze Parquet with lineage columns, and models them in dbt on DuckDB: typed staging, a dimensional mart, and cell-level change data capture between releases. 29 data tests guard accounting identities, ranges and panel balance; pytest runs the whole pipeline on synthetic releases, and CI rebuilds everything and fails if the committed results change.",
+    tech: ["Python", "dbt", "DuckDB", "Parquet", "pytest", "GitHub Actions", "Docker"],
+    metrics: [
+      "Flagged a methodology change: hydro, wind and solar rescaled ×0.94",
+      "Fossil revisions: 1% of 1960s values vs 46% of 2020s values",
+      "Balanced panel removed a fake +11-point jump in Africa's low-carbon share",
+    ],
+    github: "https://github.com/kpavan27/energy-data-pipeline",
+    featured: true,
+  },
+  {
+    id: "02",
     name: "GenAI Policy Risk Analysis",
     category: "Trust & Safety Analytics",
     categoryColor: "#ef4444",
@@ -73,7 +90,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "02",
+    id: "03",
     name: "Email Abuse Detection",
     category: "ML + Evaluation",
     categoryColor: "#06b6d4",
@@ -89,7 +106,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "03",
+    id: "04",
     name: "Zero-Shot Scene Classification (VKB)",
     category: "MSc Dissertation",
     categoryColor: "#8b5cf6",
@@ -105,7 +122,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "04",
+    id: "05",
     name: "Energy Demand Forecasting",
     category: "ML + Engineering",
     categoryColor: "#f59e0b",
@@ -117,7 +134,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "05",
+    id: "06",
     name: "Voice-to-Recipe Generator",
     category: "AI Application",
     categoryColor: "#3b82f6",
@@ -129,7 +146,7 @@ export const projects = [
     featured: true,
   },
   {
-    id: "06",
+    id: "07",
     name: "Predictive Maintenance — Manufacturing",
     category: "Data Engineering + BI",
     categoryColor: "#10b981",
