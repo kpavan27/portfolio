@@ -29,7 +29,7 @@ function CountUp({ target, suffix = "", delay = 0 }: { target: number; suffix?: 
 
 const stats = [
   { label: "Internships", value: 3, suffix: "", color: "var(--blue)", icon: "💼" },
-  { label: "Projects", value: 6, suffix: "", color: "var(--amber)", icon: "📊" },
+  { label: "Projects", value: 7, suffix: "", color: "var(--amber)", icon: "📊" },
   { label: "MSc GPA", value: 1, suffix: "st Class", color: "var(--green)", icon: "🎓" },
   { label: "B.Tech CGPA", value: 8.3, suffix: "/10", color: "var(--purple)", icon: "⚡" },
 ];

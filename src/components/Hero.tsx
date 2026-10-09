@@ -80,7 +80,7 @@ function DataChart() {
         <div className="grid grid-cols-3 gap-3 mt-5 pt-4" style={{ borderTop: "1px solid var(--border-dim)" }}>
           {[
             { val: "AWS", label: "Data Eng. Cert", c: "var(--blue)" },
-            { val: "6", label: "Projects", c: "var(--amber)" },
+            { val: "7", label: "Projects", c: "var(--amber)" },
             { val: "MSc", label: "1st Class", c: "var(--green)" },
           ].map((s) => (
             <div key={s.label} className="text-center">
