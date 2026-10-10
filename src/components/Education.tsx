@@ -21,7 +21,7 @@ export default function Education() {
         <div className="mt-14 grid md:grid-cols-2 gap-6">
           {/* Education */}
           <div className="space-y-4">
-            <p className="font-mono text-xs mb-5" style={{ color: "var(--text-dim)" }}>// academic background</p>
+            <p className="font-mono text-xs mb-5" style={{ color: "var(--text-dim)" }}>{"// academic background"}</p>
             {education.map((edu, i) => (
               <motion.div
                 key={edu.institution}
@@ -63,7 +63,7 @@ export default function Education() {
 
           {/* Certifications */}
           <div>
-            <p className="font-mono text-xs mb-5" style={{ color: "var(--text-dim)" }}>// certifications</p>
+            <p className="font-mono text-xs mb-5" style={{ color: "var(--text-dim)" }}>{"// certifications"}</p>
             <div className="space-y-4">
               {certifications.map((cert, i) => (
                 <motion.div
@@ -77,15 +77,38 @@ export default function Education() {
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border-dim)"; }}
                 >
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
-                    style={{ background: `${cert.color}18`, border: `1px solid ${cert.color}33` }}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center font-mono text-[11px] font-bold flex-shrink-0"
+                    style={{ background: `${cert.color}18`, border: `1px solid ${cert.color}33`, color: cert.color }}
                   >
-                    {i === 0 ? "☁️" : "🤖"}
+                    {cert.badge}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-sm">{cert.name}</h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-semibold text-sm">{cert.name}</h3>
+                      {cert.level === "Professional" && (
+                        <span
+                          className="font-mono text-[10px] px-1.5 py-0.5 rounded"
+                          style={{ background: `${cert.color}22`, color: cert.color }}
+                        >
+                          PROFESSIONAL
+                        </span>
+                      )}
+                    </div>
                     <p className="text-xs mt-0.5" style={{ color: "var(--text-dim)" }}>{cert.issuer}</p>
                     <p className="font-mono text-xs mt-0.5" style={{ color: "var(--muted)" }}>{cert.year}</p>
+                    {cert.validation && cert.verifyUrl && (
+                      <p className="font-mono text-[10px] mt-1.5 break-all" style={{ color: "var(--muted)" }}>
+                        Validation {cert.validation} ·{" "}
+                        <a
+                          href={cert.verifyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline underline-offset-2 hover:text-[var(--blue)]"
+                        >
+                          verify
+                        </a>
+                      </p>
+                    )}
                   </div>
                   <div
                     className="w-2 h-2 rounded-full"
@@ -94,7 +117,6 @@ export default function Education() {
                 </motion.div>
               ))}
 
-              {/* Fun fact card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -105,11 +127,13 @@ export default function Education() {
                   border: "1px solid rgba(59,130,246,0.2)",
                 }}
               >
+                <p className="font-mono text-xs mb-2" style={{ color: "var(--blue)" }}>
+                  in progress
+                </p>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-dim)" }}>
-                  Currently deepening expertise in{" "}
-                  <span style={{ color: "var(--blue)" }}>cloud data platforms</span> and{" "}
-                  <span style={{ color: "var(--purple)" }}>LLM-based analytics workflows</span> to stay
-                  ahead of the data engineering curve.
+                  An LLM safety benchmark measuring{" "}
+                  <span style={{ color: "var(--text)" }}>harmful compliance against over-refusal</span> across
+                  800 prompts, with an automatic judge validated against human labels.
                 </p>
               </motion.div>
             </div>

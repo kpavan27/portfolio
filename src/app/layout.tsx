@@ -8,8 +8,8 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weigh
 export const metadata: Metadata = {
   title: "Pavan Kolasani — Data Engineer · Data Scientist",
   description:
-    "EHR Data Migration Specialist at UPMC Ireland. SQL, Python, ETL and ML evaluation. MSc Data Science (First Class Honours), TU Dublin. AWS Certified Data Engineer – Associate. Based in Dublin.",
-  keywords: ["Data Engineer", "Data Scientist", "SQL", "Python", "ETL", "AWS", "Machine Learning", "Healthcare Data", "Dublin"],
+    "EHR Data Migration Specialist at UPMC Ireland. SQL, Python, ETL and ML evaluation. MSc Data Science (First Class Honours), TU Dublin. AWS Certified Generative AI Developer – Professional and AWS Certified Data Engineer – Associate. Based in Dublin.",
+  keywords: ["Data Engineer", "Data Scientist", "SQL", "Python", "ETL", "AWS", "Machine Learning", "Generative AI", "Healthcare Data", "Dublin"],
   authors: [{ name: "Pavan Kolasani", url: "mailto:kolasanipavan27@gmail.com" }],
   openGraph: {
     title: "Pavan Kolasani — Data Engineer · Data Scientist",

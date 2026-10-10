@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { config } from "@/data/portfolio";
+import { config, experience, projects } from "@/data/portfolio";
 
 function CountUp({ target, suffix = "", delay = 0 }: { target: number; suffix?: string; delay?: number }) {
   const [val, setVal] = useState(0);
@@ -27,11 +27,11 @@ function CountUp({ target, suffix = "", delay = 0 }: { target: number; suffix?: 
   return <span ref={ref}>{val}{suffix}</span>;
 }
 
-const stats = [
-  { label: "Internships", value: 3, suffix: "", color: "var(--blue)", icon: "💼" },
-  { label: "Projects", value: 7, suffix: "", color: "var(--amber)", icon: "📊" },
-  { label: "MSc GPA", value: 1, suffix: "st Class", color: "var(--green)", icon: "🎓" },
-  { label: "B.Tech CGPA", value: 8.3, suffix: "/10", color: "var(--purple)", icon: "⚡" },
+const stats: { label: string; value: number; suffix: string; display?: string; color: string }[] = [
+  { label: "Projects on GitHub", value: projects.length, suffix: "", color: "var(--blue)" },
+  { label: "Data roles", value: experience.length, suffix: "", color: "var(--amber)" },
+  { label: "MSc Data Science", value: 0, suffix: "", display: "1st Class", color: "var(--green)" },
+  { label: "AWS certifications", value: 2, suffix: "", color: "var(--purple)" },
 ];
 
 export default function About() {
@@ -52,18 +52,18 @@ export default function About() {
             transition={{ delay: 0.1 }}
           >
             <h2 className="text-3xl font-bold leading-snug">
-              I make data{" "}
-              <span style={{ color: "var(--blue)" }}>tell stories</span>{" "}
-              and pipelines{" "}
-              <span style={{ color: "var(--amber)" }}>run cleanly</span>.
+              Data that{" "}
+              <span style={{ color: "var(--blue)" }}>reconciles</span>, models that{" "}
+              <span style={{ color: "var(--amber)" }}>hold up</span>.
             </h2>
             <p style={{ color: "var(--text-dim)", lineHeight: "1.8" }}>
               {config.bio}
             </p>
             <p style={{ color: "var(--text-dim)", lineHeight: "1.8" }}>
-              My work spans the full data lifecycle — profiling and validating source data, building and
-              reconciling ETL pipelines, and evaluating models properly: leakage checks, confidence intervals,
-              drift and error analysis. I&apos;m equally comfortable in SQL, Python or a Power BI report.
+              Outside work I build machine learning and analytics projects the way they would be
+              reviewed in production: checking for leakage, choosing thresholds from real costs, reporting
+              uncertainty, and testing for drift. Recent work focuses on abuse detection and on how well
+              content moderation covers a written GenAI usage policy.
             </p>
 
             {/* Quick facts */}
@@ -72,12 +72,12 @@ export default function About() {
               style={{ background: "var(--surface)", border: "1px solid var(--border-dim)" }}
             >
               {[
+                ["now", config.current],
                 ["location", config.location],
                 ["education", "MSc Data Science · TU Dublin (2025)"],
-                ["role", "EHR Data Migration Specialist · UPMC Ireland"],
-                ["focus", "Data migration · ETL · ML evaluation"],
-                ["tools", "SQL · Python · AWS · DuckDB · FastAPI · Power BI"],
-                ["status", "✓ Open to new opportunities"],
+                ["focus", "Data engineering · ML evaluation · Trust & safety analytics"],
+                ["tools", "SQL · Python · AWS · scikit-learn · Power BI"],
+                ["status", "Open to permanent roles"],
               ].map(([k, v]) => (
                 <div key={k} className="flex gap-3">
                   <span style={{ color: "var(--blue)", minWidth: "80px" }}>{k}:</span>
@@ -113,10 +113,9 @@ export default function About() {
                   el.style.boxShadow = "none";
                 }}
               >
-                <span className="text-2xl">{s.icon}</span>
                 <div>
                   <div className="text-2xl font-bold font-mono" style={{ color: s.color }}>
-                    <CountUp target={s.value} suffix={s.suffix} delay={300 + i * 100} />
+                    {s.display ?? <CountUp target={s.value} suffix={s.suffix} delay={300 + i * 100} />}
                   </div>
                   <div className="text-xs mt-0.5" style={{ color: "var(--text-dim)" }}>{s.label}</div>
                 </div>

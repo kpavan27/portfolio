@@ -2,7 +2,8 @@ export const config = {
   name: "Pavan Kolasani",
   role: "Data Engineer · Data Scientist",
   tagline: "Building data pipelines and models people can trust — from healthcare data migration to ML evaluation.",
-  bio: "EHR Data Migration Specialist at UPMC Ireland, working on SQL-based data migration, ETL and data-quality validation for a MEDITECH Expanse rollout across UPMC's Irish hospitals. MSc Data Science (First Class Honours, TU Dublin) and AWS Certified Data Engineer – Associate. My projects focus on what makes data work trustworthy: leakage checks, honest evaluation, drift monitoring and clear write-ups.",
+  current: "EHR Data Migration Specialist · UPMC Ireland",
+  bio: "EHR Data Migration Specialist at UPMC Ireland, working on SQL-based data migration, ETL and data-quality validation in healthcare. MSc Data Science (First Class Honours, TU Dublin), AWS Certified Generative AI Developer – Professional and AWS Certified Data Engineer – Associate. My projects focus on what makes data work trustworthy: leakage checks, honest evaluation, drift monitoring and clear write-ups.",
   email: "kolasanipavan27@gmail.com",
   phone: "+353 894091865",
   location: "Dublin, Ireland",
@@ -11,48 +12,60 @@ export const config = {
   available: true,
 };
 
+export const highlights = [
+  { label: "Now", value: "EHR Data Migration Specialist at UPMC Ireland" },
+  { label: "New", value: "AWS Certified Generative AI Developer – Professional" },
+  { label: "Certified", value: "AWS Certified Data Engineer – Associate" },
+  { label: "Data engineering", value: "Caught a ×0.94 methodology change across energy dataset releases" },
+  { label: "Abuse detection", value: "97.6% spam recall at a 0.41% false-positive rate" },
+];
+
 export const skillCategories = [
   {
-    label: "Languages",
+    label: "Languages & Querying",
     color: "#3b82f6",
-    skills: [
-      { name: "SQL", level: 90 },
-      { name: "Python", level: 85 },
-      { name: "pandas / NumPy", level: 82 },
-      { name: "R (statistical)", level: 55 },
-    ],
-  },
-  {
-    label: "Analytics & BI",
-    color: "#f59e0b",
-    skills: [
-      { name: "Excel / Power Query", level: 90 },
-      { name: "Power BI", level: 88 },
-      { name: "Tableau", level: 70 },
-      { name: "Looker Studio", level: 50 },
-    ],
+    skills: ["SQL (window functions, reconciliation)", "Python (pandas, NumPy)", "R (statistical)"],
   },
   {
     label: "Data Engineering",
     color: "#10b981",
     skills: [
-      { name: "ETL / ELT Pipelines", level: 82 },
-      { name: "dbt / DuckDB", level: 75 },
-      { name: "Data Validation", level: 87 },
-      { name: "Feature Engineering", level: 76 },
-      { name: "Schema Modelling", level: 78 },
-      { name: "Testing & CI (pytest, GitHub Actions)", level: 70 },
+      "ETL / ELT pipelines",
+      "dbt",
+      "DuckDB",
+      "Data validation",
+      "Schema modelling",
+      "Feature engineering",
+      "Data migration",
     ],
   },
   {
     label: "Cloud & Platforms",
     color: "#8b5cf6",
+    skills: ["AWS (Data Engineer, GenAI Developer certified)", "Azure", "Databricks", "Git / GitHub"],
+  },
+  {
+    label: "ML & Evaluation",
+    color: "#ef4444",
     skills: [
-      { name: "Git / GitHub", level: 88 },
-      { name: "Azure", level: 65 },
-      { name: "Databricks", level: 60 },
-      { name: "AWS (Certified Data Engineer)", level: 75 },
+      "scikit-learn",
+      "XGBoost",
+      "TensorFlow",
+      "YOLOv8",
+      "Hypothesis testing",
+      "Bootstrap CIs",
+      "Drift monitoring",
     ],
+  },
+  {
+    label: "Analytics & BI",
+    color: "#f59e0b",
+    skills: ["Excel / Power Query", "Power BI", "Tableau", "Looker Studio"],
+  },
+  {
+    label: "Testing & Delivery",
+    color: "#06b6d4",
+    skills: ["pytest", "GitHub Actions CI", "Docker", "FastAPI"],
   },
 ];
 
@@ -119,7 +132,7 @@ export const projects = [
       "Ablation: uniform weights drop Top-1 to 50%",
     ],
     github: "https://github.com/kpavan27/zero-shot-scene-classification",
-    featured: true,
+    featured: false,
   },
   {
     id: "05",
@@ -131,7 +144,7 @@ export const projects = [
     tech: ["Python", "TensorFlow", "FastAPI", "React", "TypeScript", "Vite"],
     metrics: ["Next-hour forecast from a 24-hour window", "FastAPI prediction API", "React live dashboard"],
     github: "https://github.com/kpavan27/energy-demand-forecasting",
-    featured: true,
+    featured: false,
   },
   {
     id: "06",
@@ -143,7 +156,7 @@ export const projects = [
     tech: ["Python", "FastAPI", "Whisper", "React", "TypeScript", "Tailwind CSS"],
     metrics: ["150+ ingredient variations", "Carbon footprint scoring", "Nutrition + sustainability analysis"],
     github: "https://github.com/kpavan27/voice-to-recipe",
-    featured: true,
+    featured: false,
   },
   {
     id: "07",
@@ -167,12 +180,11 @@ export const experience = [
     location: "Dublin, Ireland",
     color: "#06b6d4",
     bullets: [
-      "Supporting the MEDITECH Expanse EHR implementation across UPMC's Irish hospital network, moving patient data off legacy systems.",
-      "Writing and reviewing SQL-based migration and ETL logic: tracing patient records across source schemas, mapping to target, and running agreed migration processes under the programme's clean → map → test → validate → sign-off process.",
-      "Validating data quality with profiling, duplicate and NULL checks, and source-to-target count reconciliation.",
-      "Collaborating cross-functionally on migration work, with patient safety at the centre of every decision.",
+      "SQL-based migration of healthcare data between systems, from source cleansing and source-to-target mapping through testing, validation and signoff.",
+      "Data quality and profiling checks: duplicate and NULL handling, referential integrity and source-to-output count reconciliation.",
+      "Work with clinical, IT and vendor teams on mapping decisions, escalating data issues and documenting assumptions under GDPR and information governance.",
     ],
-    tech: ["SQL", "Python", "ETL", "Data Validation", "MEDITECH Expanse"],
+    tech: ["SQL", "Python", "ETL", "Data Validation", "GDPR"],
   },
   {
     company: "Innovorex",
@@ -236,8 +248,34 @@ export const education = [
   },
 ];
 
-export const certifications = [
-  { name: "AWS Certified Data Engineer – Associate (DEA-C01)", issuer: "Amazon Web Services", year: "2026", color: "#f59e0b" },
-  { name: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services", year: "2025", color: "#f59e0b" },
-  { name: "Generative AI & LLM Development", issuer: "DeepLearning.AI", year: "2024", color: "#8b5cf6" },
+export const certifications: {
+  name: string;
+  issuer: string;
+  year: string;
+  badge: string;
+  color: string;
+  level?: string;
+  validation?: string;
+  verifyUrl?: string;
+}[] = [
+  {
+    name: "AWS Certified Generative AI Developer – Professional",
+    issuer: "Amazon Web Services",
+    year: "Oct 2026 · valid to Oct 2029",
+    badge: "AWS",
+    color: "#06b6d4",
+    level: "Professional",
+    validation: "1b9fac287b294aee85d34a35ecc5591c",
+    verifyUrl: "https://aws.amazon.com/verification",
+  },
+  {
+    name: "AWS Certified Data Engineer – Associate (DEA-C01)",
+    issuer: "Amazon Web Services",
+    year: "2026",
+    badge: "AWS",
+    color: "#f59e0b",
+    level: "Associate",
+  },
+  { name: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services", year: "2025", badge: "AWS", color: "#64748b" },
+  { name: "Generative AI & LLM Development", issuer: "DeepLearning.AI", year: "2024", badge: "AI", color: "#8b5cf6" },
 ];
