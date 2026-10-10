@@ -64,8 +64,9 @@ export default function Contact() {
               <span style={{ color: "var(--blue)" }}>talk</span>.
             </h2>
             <p className="leading-relaxed mb-8" style={{ color: "var(--text-dim)" }}>
-              I&apos;m open to permanent roles in data engineering, data science and trust &amp; safety
-              analytics, in Dublin or remote. The quickest way to reach me is email.
+              I&apos;m open to data engineering, analytics and data science roles, especially in
+              healthcare and health-tech. Whether you need reliable pipelines, careful data validation
+              or models that hold up in production, I&apos;d love to chat.
             </p>
 
             {/* Contact items */}
@@ -166,7 +167,7 @@ export default function Contact() {
                 ['  "location"', `"${config.location}"`],
                 ['  "available"', "true"],
                 ['  "current"', `"${config.current}"`],
-                ['  "open_to"', '["permanent", "full-time"]'],
+                ['  "open_to"', '["full-time", "permanent"]'],
                 ['  "timezone"', '"Europe/Dublin (GMT+1)"'],
                 ['  "stack"', '["SQL", "Python", "AWS", "scikit-learn"]'],
                 ['}', null],

@@ -60,10 +60,9 @@ export default function About() {
               {config.bio}
             </p>
             <p style={{ color: "var(--text-dim)", lineHeight: "1.8" }}>
-              Outside work I build machine learning and analytics projects the way they would be
-              reviewed in production: checking for leakage, choosing thresholds from real costs, reporting
-              uncertainty, and testing for drift. Recent work focuses on abuse detection and on how well
-              content moderation covers a written GenAI usage policy.
+              My work spans the full data lifecycle — profiling and validating source data, building and
+              reconciling ETL pipelines, and evaluating models properly: leakage checks, confidence intervals,
+              drift and error analysis. I&apos;m equally comfortable in SQL, Python or a Power BI report.
             </p>
 
             {/* Quick facts */}
@@ -72,12 +71,12 @@ export default function About() {
               style={{ background: "var(--surface)", border: "1px solid var(--border-dim)" }}
             >
               {[
-                ["now", config.current],
+                ["role", config.current],
                 ["location", config.location],
                 ["education", "MSc Data Science · TU Dublin (2025)"],
-                ["focus", "Data engineering · ML evaluation · Trust & safety analytics"],
-                ["tools", "SQL · Python · AWS · scikit-learn · Power BI"],
-                ["status", "Open to permanent roles"],
+                ["focus", "Data engineering · ETL · ML evaluation"],
+                ["tools", "SQL · Python · AWS · dbt · DuckDB · Power BI"],
+                ["status", "Open to new opportunities"],
               ].map(([k, v]) => (
                 <div key={k} className="flex gap-3">
                   <span style={{ color: "var(--blue)", minWidth: "80px" }}>{k}:</span>
