@@ -92,7 +92,7 @@ export const projects = [
     category: "Trust & Safety Analytics",
     categoryColor: "#ef4444",
     description:
-      "Mapped the 20 clauses of Google's Generative AI Prohibited Use Policy onto an off-the-shelf moderation signal and measured the gaps on 5,082 real user prompts (ToxicChat). Restricted label-based analysis to human-annotated prompts after finding the rest were pre-filtered by the same moderation API — grading it on them would be circular. Sized each uncovered clause, quantified the review-load cost of lowering the flag threshold, and wrote a decision memo with three ranked risks and recommendations.",
+      "Mapped the 20 clauses of Google's Generative AI Prohibited Use Policy onto an off-the-shelf moderation signal and measured the gaps on 5,082 real user prompts (ToxicChat). Restricted label-based analysis to human-annotated prompts after finding the rest had been cleared by a moderation pre-filter, so grading moderation on them would be circular. Sized each uncovered clause, quantified the review-load cost of lowering the flag threshold, and wrote a decision memo with three ranked risks and recommendations.",
     tech: ["Python", "pandas", "scikit-learn", "Statistics", "Policy Analysis", "pytest"],
     metrics: [
       "12 of 20 policy clauses had no moderation signal",
