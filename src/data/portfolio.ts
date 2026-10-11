@@ -3,7 +3,7 @@ export const config = {
   role: "Data Engineer · Data Scientist",
   tagline: "Building data pipelines and models people can trust — from healthcare data migration to ML evaluation.",
   current: "EHR Data Migration Specialist · UPMC Ireland",
-  bio: "EHR Data Migration Specialist at UPMC Ireland, working on SQL-based data migration, ETL and data-quality validation in healthcare. MSc Data Science (First Class Honours, TU Dublin), AWS Certified Generative AI Developer – Professional and AWS Certified Data Engineer – Associate. My projects focus on what makes data work trustworthy: leakage checks, honest evaluation, drift monitoring and clear write-ups.",
+  bio: "EHR Data Migration Specialist at UPMC Ireland, working on SQL-based data migration, ETL and data-quality validation in healthcare. MSc Computer Science (Data Science), First Class Honours, TU Dublin, AWS Certified Generative AI Developer – Professional and AWS Certified Data Engineer – Associate. My projects focus on what makes data work trustworthy: leakage checks, honest evaluation, drift monitoring and clear write-ups.",
   email: "kolasanipavan27@gmail.com",
   phone: "+353 894091865",
   location: "Dublin, Ireland",
@@ -230,7 +230,7 @@ export const experience = [
 export const education = [
   {
     institution: "Technological University Dublin",
-    degree: "MSc Data Science",
+    degree: "MSc Computer Science (Data Science)",
     grade: "First Class Honours",
     period: "2024 – 2025",
     location: "Dublin, Ireland",
@@ -239,7 +239,7 @@ export const education = [
   },
   {
     institution: "ICFAI Tech University",
-    degree: "B.Tech — Artificial Intelligence & Machine Learning",
+    degree: "B.Tech — Data Science & Artificial Intelligence",
     grade: "CGPA 8.3 / 10",
     period: "2020 – 2024",
     location: "India",

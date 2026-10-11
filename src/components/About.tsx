@@ -30,7 +30,7 @@ function CountUp({ target, suffix = "", delay = 0 }: { target: number; suffix?: 
 const stats: { label: string; value: number; suffix: string; display?: string; color: string }[] = [
   { label: "Projects on GitHub", value: projects.length, suffix: "", color: "var(--blue)" },
   { label: "Data roles", value: experience.length, suffix: "", color: "var(--amber)" },
-  { label: "MSc Data Science", value: 0, suffix: "", display: "1st Class", color: "var(--green)" },
+  { label: "MSc Computer Science", value: 0, suffix: "", display: "1st Class", color: "var(--green)" },
   { label: "AWS certifications", value: 2, suffix: "", color: "var(--purple)" },
 ];
 
@@ -73,7 +73,7 @@ export default function About() {
               {[
                 ["role", config.current],
                 ["location", config.location],
-                ["education", "MSc Data Science · TU Dublin (2025)"],
+                ["education", "MSc Computer Science (Data Science) · TU Dublin (2025)"],
                 ["focus", "Data engineering · ETL · ML evaluation"],
                 ["tools", "SQL · Python · AWS · dbt · DuckDB · Power BI"],
                 ["status", "Open to new opportunities"],
